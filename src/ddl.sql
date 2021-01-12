@@ -13,10 +13,13 @@ create table product (
 );
 
 create table `order` (
+    id bigint auto_increment,
+    amount bigint not null,
+    stat int not null default 0 comment '0:주문접수 1:배송완료',
+    date datetime not null default current_timestamp,
     userId bigint not null,
     productId bigint not null,
-    amount bigint not null,
-    date date not null,
+    primary key (id),
     foreign key (userId) references user (id),
     foreign key (productId) references product (id)
 );

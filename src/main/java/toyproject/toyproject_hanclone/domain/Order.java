@@ -1,12 +1,27 @@
 package toyproject.toyproject_hanclone.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import lombok.*;
+
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode(of = "id")
 public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
+    private Long id;
+
+    private Long amount;
+    private int stat;
+    private Date date;
 
     @ManyToOne
     @JoinColumn(name = "userId")
@@ -15,21 +30,4 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "productId")
     private Product product;
-
-    private Long amount;
-    private Date date;
-
-    public Long getAmount() {
-        return amount;
-    }
-    public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }
