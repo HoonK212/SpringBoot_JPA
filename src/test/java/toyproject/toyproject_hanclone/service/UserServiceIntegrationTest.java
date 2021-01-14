@@ -26,7 +26,7 @@ public class UserServiceIntegrationTest {
     void afterEach() {}
 
     @Test
-    public void join() throws Exception {
+    public void join() {
         // given
         User user = new User();
         user.setName("Hoon");
@@ -41,7 +41,7 @@ public class UserServiceIntegrationTest {
     }
 
     @Test
-    public void validateDuplicateUser() throws Exception {
+    public void validateDuplicateUser() {
         // given
         User user1 = new User();
         user1.setName("Hoon");

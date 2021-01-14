@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "user")
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,6 +23,6 @@ public class User {
     private String name;
     private String pw;
 
-    @OneToMany(mappedBy = "user")
+    @Builder.Default @OneToMany(mappedBy = "user")
     private List<Order> orders = new ArrayList<Order>();
 }

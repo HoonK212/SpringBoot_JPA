@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "product")
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,6 +23,6 @@ public class Product {
     private String name;
     private Long price;
 
-    @OneToMany(mappedBy = "product")
+    @Builder.Default @OneToMany(mappedBy = "product")
     private List<Order> orders = new ArrayList<Order>();
 }

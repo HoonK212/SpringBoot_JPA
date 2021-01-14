@@ -27,7 +27,7 @@ public class ProductServiceIntegrationTest {
     void afterEach() {}
 
     @Test
-    public void add() throws Exception {
+    public void add() {
         // given
         Product prod = new Product();
         prod.setName("Item");

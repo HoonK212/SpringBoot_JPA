@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface UserRepository {
 
-    void save(User member);
+    void save(User user);
 
     List<User> findAll();
 
